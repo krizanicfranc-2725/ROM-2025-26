@@ -1,0 +1,436 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17548,        428]
+NotebookOptionsPosition[     15506,        392]
+NotebookOutlinePosition[     15937,        409]
+CellTagsIndexPosition[     15894,        406]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Avtomatsko", " ", "shranjevanje", " ", "notebook"}], "-", "a"}], 
+   "*)"}], 
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"$FrontEndSession", ",", 
+     RowBox[{"NotebookAutoSave", "->", "True"}]}], "]"}], "\n", 
+   RowBox[{"NotebookSave", "[", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.9853235751530857`*^9, 3.9853235751530857`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"ae6fbee1-c7f0-434e-a020-44b5a00a0d47"],
+
+Cell[CellGroupData[{
+
+Cell["Vaje 8 - Podatkovna analiza z Mathematico", "Title",
+ CellChangeTimes->{{3.985148231581998*^9, 3.9851482661684375`*^9}, 
+   3.985275552226124*^9},ExpressionUUID->"167e07c8-87b3-418c-ae4a-\
+643315a0a99b"],
+
+Cell[TextData[{
+ StyleBox["1. a)",
+  FontWeight->"Bold"],
+ " Z ukazom \[OpenCurlyQuote]Directory\[CloseCurlyQuote] preveri delovno \
+podro\[CHacek]je. Nato z uporabo \[OpenCurlyQuote]SetDirectory\
+\[CloseCurlyQuote] in \[OpenCurlyQuote]NotebookDirectory\[CloseCurlyQuote] \
+nastavi delovno podro\[CHacek]je na ustrezno mapo. "
+}], "Text",
+ CellChangeTimes->{{3.9851475360099773`*^9, 3.9851476054689465`*^9}, {
+  3.98523957599275*^9, 
+  3.985239589442259*^9}},ExpressionUUID->"b282c310-1783-44a0-b5cc-\
+4217572a8639"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"pot", " ", "=", " ", 
+  RowBox[{"NotebookDirectory", "[", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"SetDirectory", "[", "pot", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Directory", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.9853237458008976`*^9, 3.985323849177845*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"6adcf143-634d-a248-82a5-dfc1787843c3"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\fk72368\\\\Documents\\\\fork\\\\ROM-2025-26\\\
+\\Vaje 8\\\\\"\>"], "Output",
+ CellChangeTimes->{{3.9853237631246223`*^9, 3.985323791731245*^9}, {
+  3.9853238228507576`*^9, 3.985323850010069*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"8acb7215-d09d-8c4c-b60b-9475e0a2fdad"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\fk72368\\\\Documents\\\\fork\\\\ROM-2025-26\\\
+\\Vaje 8\"\>"], "Output",
+ CellChangeTimes->{{3.9853237631246223`*^9, 3.985323791731245*^9}, {
+  3.9853238228507576`*^9, 3.985323850042858*^9}},
+ CellLabel->"Out[15]=",ExpressionUUID->"eeec6054-b871-c642-bd57-849390eb0d5a"]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["1. b)",
+  FontWeight->"Bold"],
+ " Z ukazom \[OpenCurlyQuote]Import\[CloseCurlyQuote] uvozi tabelo iz \
+datoteke \[OpenCurlyQuote]rezultati.xlsx\[CloseCurlyQuote], v kateri se \
+nahajajo rezultati pisnega izpita pri nekem predmetu. Podatke uvozi v formatu \
+\[OpenCurlyQuote]Dataset\[CloseCurlyQuote]. Uvo\[ZHacek]ena tabela naj ima \
+ozna\[CHacek]eno \[OpenCurlyDoubleQuote]glavo\[CloseCurlyDoubleQuote] (prvo \
+vrstico - ukaz \[OpenCurlyQuote]HeaderLines\[CloseCurlyQuote]).  Tabelo shani \
+v spremenljivko \[OpenCurlyQuote]podatki\[CloseCurlyQuote]. "
+}], "Text",
+ CellChangeTimes->{{3.9851476442378054`*^9, 3.9851476891133275`*^9}, {
+  3.9851477986226935`*^9, 3.9851478720802083`*^9}, {3.985147911533061*^9, 
+  3.985147926427441*^9}, {3.9852395800786467`*^9, 3.98523959301991*^9}, {
+  3.9852727643812523`*^9, 
+  3.9852727645569277`*^9}},ExpressionUUID->"001f8992-6442-47d6-b136-\
+4b4c04781fd0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"podatki", " ", "=", " ", 
+   RowBox[{"First", "[", 
+    RowBox[{"Import", "[", 
+     RowBox[{"\"\<rezultati.xlsx\>\"", ",", " ", "\"\<Dataset\>\"", ",", " ", 
+      RowBox[{"HeaderLines", "->", " ", "1"}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9853238947597027`*^9, 3.9853239231485767`*^9}, {
+  3.985324013491932*^9, 3.985324090192505*^9}, {3.9853241210587616`*^9, 
+  3.985324178675865*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"7ef85095-a927-e74b-8ec3-f25f6f9bdd20"],
+
+Cell[TextData[{
+ StyleBox["2.",
+  FontWeight->"Bold"],
+ " Sestavi naslednje funkcije:\n 1.) ",
+ StyleBox["Imena[podatki_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki vrne seznam imen stolpcev (prva vrstica tabele). Uporabi\[SHacek] \
+lahko funkcijo \[OpenCurlyQuote]Keys\[CloseCurlyQuote].\n 2.) ",
+ StyleBox["Podatki[podatki_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki vrne tabelo podatkov, t.j. podatke v vrsticah brez glave tabele. \
+Uporabi\[SHacek] lahko funkcijo \[OpenCurlyQuote]Values\[CloseCurlyQuote].\n \
+3.) ",
+ StyleBox["IndeksStolpca[podatki_, stolpec_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki za dano ime stolpca vrne indeks stolpca. Npr. pri na\[SHacek]i tabeli \
+klic ",
+ StyleBox["IndeksStolpca[podatki, \[OpenCurlyDoubleQuote]Ime\
+\[CloseCurlyDoubleQuote]]",
+  FontSlant->"Italic"],
+ " vrne 2. \[CapitalCHacek]e stolpec s tem imenom ne obstaja, naj funkcija \
+vrne Null (prazno). Poskusi uporabiti funkcijo \[OpenCurlyQuote]Position\
+\[CloseCurlyQuote], za definiranje lokalnih spremenljivk pa lahko uporabi\
+\[SHacek] funkcijo \[OpenCurlyQuote]Module\[CloseCurlyQuote].\n 4.) ",
+ StyleBox["Stolpec[podatki_, stolpec_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki vrne podatke v stolpcu s podanim imenom stolpec. Seznam naj vsebuje \
+samo podatke, ne pa tudi glave. Poskusi uporabiti funkcijo \
+\[OpenCurlyQuote]Transpose\[CloseCurlyQuote].\n5.) ",
+ StyleBox["PovprecjeTock[podatki_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki izra\[CHacek]una povpre\[CHacek]je dose\[ZHacek]enih to\[CHacek]k. \
+Uporabi funkcijo \[OpenCurlyQuote]Mean\[CloseCurlyQuote].\n6.) ",
+ StyleBox["RazlicneVrednosti[podatki_, stolpec_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki vrne seznam razli\[CHacek]nih vrednosti za stolpec. Koliko skupin \
+testov so pisali? Namig: preveri, kaj naredi funkcija \[OpenCurlyQuote]Union\
+\[CloseCurlyQuote] na seznamih, v katerih se ponavaljajo vrednosti.\n7.) ",
+ StyleBox["Vrstica[podatki_, i_]",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ ", ki vrne i-to vrstico v tabeli. Pazi: vrstice z glavo ne \[SHacek]teje\
+\[SHacek]. Vrstica z indeksom 1 je prva naslednja vrstica po glavi, t.j. prva \
+vrstica podatkov."
+}], "Text",
+ CellChangeTimes->{{3.9851478822495384`*^9, 3.9851478922124395`*^9}, {
+   3.9851479305953197`*^9, 3.9851481114960384`*^9}, {3.9851481480911455`*^9, 
+   3.985148217838454*^9}, 3.9851482981235075`*^9, {3.985148910902585*^9, 
+   3.985148923588157*^9}, {3.9851490390807962`*^9, 3.9851490400741787`*^9}, {
+   3.9852395966316543`*^9, 3.9852396010536213`*^9}, {3.985273088321402*^9, 
+   3.9852730971018877`*^9}, {3.985273319770336*^9, 3.98527334493591*^9}, {
+   3.9852734847379646`*^9, 3.9852735045967245`*^9}, {3.9852736395047626`*^9, 
+   3.9852736736838183`*^9}, {3.9853241900588627`*^9, 3.985324214812538*^9}, {
+   3.985324265140667*^9, 
+   3.985324307973444*^9}},ExpressionUUID->"1a769373-e519-485b-b258-\
+826671c5a0d2"],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    StyleBox[
+     RowBox[{"(", "*"}]], "1", 
+    StyleBox[
+     RowBox[{"*", ")"}]]}], 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Imena", "[", "podatki_", "]"}], ":=", " ", 
+     RowBox[{"First", "[", 
+      RowBox[{"Keys", "[", "podatki", "]"}], "]"}]}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Imena", "[", "podatki", "]"}], ";"}]}]}],
+  FontWeight->"Bold",
+  FontSlant->"Italic"]], "Input",
+ CellChangeTimes->{{3.985324318856594*^9, 3.985324421783697*^9}, 
+   3.9853244800240345`*^9, 3.985324684338955*^9, 3.9853254729246464`*^9},
+ CellLabel->"In[90]:=",ExpressionUUID->"26aab741-18a5-c64e-b301-f7410b954c7d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "2", "*)"}], 
+  StyleBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"Podatki", "[", "podatki_", "]"}], " ", ":=", " ", 
+     RowBox[{"Values", "[", "podatki", "]"}]}], "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Podatki", "[", "podatki", "]"}], ";"}]}],
+   FontWeight->"Bold",
+   FontSlant->"Italic"]}]], "Input",
+ CellChangeTimes->{{3.985324431374527*^9, 3.985324477614046*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"34da30ce-c994-4d4f-b792-5cd6c923ce77"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "3", "*)"}], 
+  RowBox[{
+   RowBox[{
+    StyleBox[
+     RowBox[{"IndeksStolpca", "[", 
+      RowBox[{"podatki_", ",", " ", "stolpec_"}], "]"}],
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    StyleBox[" ",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    StyleBox[":=",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    StyleBox[" ",
+     FontWeight->"Bold",
+     FontSlant->"Italic"], 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"MemberQ", "[", 
+       RowBox[{
+        RowBox[{"Imena", "[", "podatki", "]"}], ",", " ", "stolpec"}], " ", 
+       "]"}], ",", "\[IndentingNewLine]", "\t\t\t\t\t\t\t\t\t\t", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Position", "[", 
+         RowBox[{
+          RowBox[{"Imena", "[", "podatki", "]"}], ",", "stolpec"}], "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", 
+      "\t\t\t\t\t\t\t\t\t\t", "Null"}], "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"IndeksStolpca", "[", 
+     RowBox[{"podatki", ",", " ", "\"\<Ime\>\""}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9853244884087086`*^9, 3.9853245018750973`*^9}, {
+  3.9853245335926647`*^9, 3.98532458340003*^9}, {3.985324615924963*^9, 
+  3.985324621608053*^9}, {3.985324728359188*^9, 3.985324837559881*^9}, {
+  3.985324879355278*^9, 3.9853249195877724`*^9}, {3.985324969378502*^9, 
+  3.9853250068909645`*^9}, {3.985325039739958*^9, 3.9853251645707264`*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"91199373-9487-5842-919e-9c072c4121b6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "4", "*)"}], " ", 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"Stolpec", "[", 
+      RowBox[{"podatki_", ",", " ", "stolpec_"}], "]"}], " ", ":=", " ", 
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"n", "=", 
+         RowBox[{"IndeksStolpca", "[", 
+          RowBox[{"podatki", ",", " ", "stolpec"}], "]"}]}], "}"}], ",", " ", 
+       RowBox[{
+        RowBox[{"Transpose", "[", "podatki", "]"}], "[", 
+        RowBox[{"[", "n", "]"}], "]"}]}], "]"}]}],
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   RowBox[{
+    RowBox[{"Stolpec", "[", 
+     RowBox[{"podatki", ",", "\"\<Ime\>\""}], "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.985324827366886*^9, 3.985324853208252*^9}, {
+   3.98532520680641*^9, 3.985325378854803*^9}, 3.9853254230384464`*^9},
+ CellLabel->"In[88]:=",ExpressionUUID->"6615f8d4-80e1-0448-8941-05dc06167bb3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "5", "*)"}], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"PovprecjeTock", "[", "podatki_", "]"}], " ", ":=", " ", 
+     RowBox[{"Mean", "[", 
+      RowBox[{"Stolpec", "[", 
+       RowBox[{"podatki", ",", " ", "\"\<To\[CHacek]ke\>\""}], "]"}], "]"}]}],
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   RowBox[{
+    RowBox[{"PovprecjeTock", "[", "podatki", "]"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9853254365045547`*^9, 3.985325438872658*^9}, {
+  3.9853254867784233`*^9, 3.9853254885886555`*^9}, {3.9853255194292927`*^9, 
+  3.9853255760231915`*^9}},
+ CellLabel->"In[95]:=",ExpressionUUID->"0a049eb1-2816-ba47-8eb2-7ecfd4607a51"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "6", "*)"}], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"RazlicneVrednosti", "[", 
+      RowBox[{"podatki_", ",", " ", "stolpec_"}], "]"}], " ", ":=", "  ", 
+     RowBox[{"Length", "[", 
+      RowBox[{"DeleteDuplicates", "[", 
+       RowBox[{"Stolpec", "[", 
+        RowBox[{"podatki", ",", " ", "stolpec"}], "]"}], "]"}], "]"}]}],
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Bold",
+    FontSlant->"Italic"], 
+   RowBox[{
+    RowBox[{"RazlicneVrednosti", "[", 
+     RowBox[{"podatki", ",", " ", "\"\<Skupina\>\""}], "]"}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.9853255796066303`*^9, 3.9853256112283363`*^9}, {
+  3.9853256555736504`*^9, 3.9853256627066593`*^9}, {3.985325693799509*^9, 
+  3.985325695239998*^9}, {3.9853257348054314`*^9, 3.985325750622965*^9}, {
+  3.9853257924056168`*^9, 3.985325836205368*^9}, {3.985325884767004*^9, 
+  3.985325884872116*^9}, {3.985326041104368*^9, 3.985326079771288*^9}},
+ CellLabel->
+  "In[119]:=",ExpressionUUID->"1985c170-fc00-7c4f-b6d2-68a9f168bb18"],
+
+Cell[TextData[{
+ StyleBox["3.",
+  FontWeight->"Bold"],
+ " Sestavi funkcijo ",
+ StyleBox["OcenaZaMeje[{za6_, za7_, za8_, za9_, za10_}, tocke_]",
+  FontWeight->"Bold"],
+ ", pri kateri so v prvem argumentu meje za ocene v \[SHacek]tevilu to\
+\[CHacek]k, v drugem argumentu pa \[SHacek]tevilo to\[CHacek]k, za katere\n\
+\[ZHacek]elimo izra\[CHacek]unati oceno. Funkcijo napi\[SHacek]i s pomo\
+\[CHacek]jo ustreznih stavkov \[OpenCurlyQuote]",
+ "If\[CloseCurlyQuote]",
+ ". Nato sestavi funkcijo ",
+ StyleBox["Ocene[podatki_, meje_]",
+  FontWeight->"Bold"],
+ ", ki izra\[CHacek]una stolpec ocen za dane podatke in meje."
+}], "Text",
+ CellChangeTimes->{{3.985239644692469*^9, 
+  3.985239784122751*^9}},ExpressionUUID->"fa46e67f-a2c0-400c-9e56-\
+76011006aee7"],
+
+Cell[TextData[{
+ StyleBox["4.",
+  FontWeight->"Bold"],
+ " Sestavi funkcijo ",
+ StyleBox["DodajStolpec[podatki_]",
+  FontWeight->"Bold"],
+ ", ki obstoje\[CHacek]i tabeli doda \[SHacek]e en stolpec (oz . vrne novo \
+tabelo z dodanim stolpcem) . Premisli, kako s pomo\[CHacek]jo \
+\[OpenCurlyQuote]Query\[CloseCurlyQuote] doda\[SHacek] stolpec tabeli.  \
+Podatkom dodaj stolpec \"Ocena\" z ocenami in vse skupaj shrani v \
+spremenljivko ",
+ StyleBox["podatkiOcene",
+  FontSlant->"Italic"],
+ ". Novo tabelo shrani v Excelov zvezek \[OpenCurlyQuote]ocene.xlsx\
+\[CloseCurlyQuote] s pomo\[CHacek]jo ukaza \[OpenCurlyQuote]Export\
+\[CloseCurlyQuote] ."
+}], "Text",
+ CellChangeTimes->{{3.9852397776051655`*^9, 3.9852397800421305`*^9}, {
+  3.9852398126988883`*^9, 3.9852399085416565`*^9}, {3.985274011227133*^9, 
+  3.985274014265061*^9}, {3.9852745439486957`*^9, 
+  3.9852745447927713`*^9}},ExpressionUUID->"ddafbd4d-e66d-4101-964e-\
+c054ea633987"],
+
+Cell[TextData[{
+ StyleBox["5.",
+  FontWeight->"Bold"],
+ " Preveri, kaj naredi funkcija \[OpenCurlyQuote]BinCount\[CloseCurlyQuote] \
+na seznamu ocen. Ali bi se dele rezultata te funkcije dalo uporabiti, da bi \
+pre\[SHacek]teli, koliko \[SHacek]tudentov je dobilo kak\[SHacek]no oceno? \
+Namig : uporabi\[SHacek] lahko funkcije za delo s seznami kot so Rest, Drop, \
+Take, ... Izra\[CHacek]unaj porazdelitev ocen in jo shrani v spremenljivko \
+\[OpenCurlyQuote]porazdelitevOcen\[CloseCurlyQuote]. To je seznam \
+\[SHacek]estih vrednosti, pri \[CHacek]emer prva predstavlja \[SHacek]tevilo \
+\[SHacek]tudentov z negativno oceno, druga \[SHacek]tevilo \[SHacek]tudentov \
+z oceno 6, . . ."
+}], "Text",
+ CellChangeTimes->{{3.9852399435235586`*^9, 3.9852399714010763`*^9}, {
+  3.9852405189352884`*^9, 
+  3.985240584166198*^9}},ExpressionUUID->"22b9d7e8-af8a-47ef-94ba-\
+cc72a7f9157a"]
+}, Open  ]]
+},
+WindowSize->{1002, 735},
+WindowMargins->{{-5.25, Automatic}, {Automatic, 0}},
+Magnification:>0.75 Inherited,
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2b034349-776f-44e6-81c7-3f57b2ef454d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 489, 12, 35, "Input",ExpressionUUID->"ae6fbee1-c7f0-434e-a020-44b5a00a0d47"],
+Cell[CellGroupData[{
+Cell[1072, 36, 209, 3, 72, "Title",ExpressionUUID->"167e07c8-87b3-418c-ae4a-643315a0a99b"],
+Cell[1284, 41, 516, 11, 25, "Text",ExpressionUUID->"b282c310-1783-44a0-b5cc-4217572a8639"],
+Cell[CellGroupData[{
+Cell[1825, 56, 375, 6, 49, "Input",ExpressionUUID->"6adcf143-634d-a248-82a5-dfc1787843c3"],
+Cell[2203, 64, 307, 4, 24, "Output",ExpressionUUID->"8acb7215-d09d-8c4c-b60b-9475e0a2fdad"],
+Cell[2513, 70, 303, 4, 24, "Output",ExpressionUUID->"eeec6054-b871-c642-bd57-849390eb0d5a"]
+}, Open  ]],
+Cell[2831, 77, 924, 16, 41, "Text",ExpressionUUID->"001f8992-6442-47d6-b136-4b4c04781fd0"],
+Cell[3758, 95, 527, 11, 21, "Input",ExpressionUUID->"7ef85095-a927-e74b-8ec3-f25f6f9bdd20"],
+Cell[4288, 108, 2952, 61, 172, "Text",ExpressionUUID->"1a769373-e519-485b-b258-826671c5a0d2"],
+Cell[7243, 171, 669, 19, 35, "Input",ExpressionUUID->"26aab741-18a5-c64e-b301-f7410b954c7d"],
+Cell[7915, 192, 501, 13, 35, "Input",ExpressionUUID->"34da30ce-c994-4d4f-b792-5cd6c923ce77"],
+Cell[8419, 207, 1600, 41, 63, "Input",ExpressionUUID->"91199373-9487-5842-919e-9c072c4121b6"],
+Cell[10022, 250, 1005, 27, 35, "Input",ExpressionUUID->"6615f8d4-80e1-0448-8941-05dc06167bb3"],
+Cell[11030, 279, 773, 20, 35, "Input",ExpressionUUID->"0a049eb1-2816-ba47-8eb2-7ecfd4607a51"],
+Cell[11806, 301, 1104, 27, 35, "Input",ExpressionUUID->"1985c170-fc00-7c4f-b6d2-68a9f168bb18"],
+Cell[12913, 330, 752, 18, 41, "Text",ExpressionUUID->"fa46e67f-a2c0-400c-9e56-76011006aee7"],
+Cell[13668, 350, 939, 21, 41, "Text",ExpressionUUID->"ddafbd4d-e66d-4101-964e-c054ea633987"],
+Cell[14610, 373, 880, 16, 58, "Text",ExpressionUUID->"22b9d7e8-af8a-47ef-94ba-cc72a7f9157a"]
+}, Open  ]]
+}
+]
+*)
+
