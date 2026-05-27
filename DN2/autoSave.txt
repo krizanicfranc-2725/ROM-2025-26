@@ -1,0 +1,3 @@
+(*Avtomatsko shranjevanje notebook-a*)
+SetOptions[$FrontEndSession, NotebookAutoSave -> True]
+NotebookSave[]
